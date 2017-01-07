@@ -2,7 +2,7 @@
   "name": "react-emoji-feedback",
   "description": "Simple emoji based feedback component",
   "keywords": ["react", "emoji", "feedback", "opinion", "typescript"],
-  "version": "0.1",
+  "version": "0.1.0",
   "scripts": {
     "start": "webpack-dev-server"
   },
