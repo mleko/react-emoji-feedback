@@ -1,7 +1,8 @@
 {
-  "name": "typescript-react-jsx-init",
-  "version": "1.0.0",
-  "private": true,
+  "name": "react-emoji-feedback",
+  "description": "Simple emoji based feedback component",
+  "keywords": ["react", "emoji", "feedback", "opinion", "typescript"],
+  "version": "0.1",
   "scripts": {
     "start": "webpack-dev-server"
   },
