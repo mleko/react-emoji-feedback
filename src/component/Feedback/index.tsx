@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Face} from "../Face/index";
+import {Face} from "../Face";
 
 export class Feedback extends React.Component<Props, State> {
 
@@ -16,7 +16,7 @@ export class Feedback extends React.Component<Props, State> {
 
 	public render(): JSX.Element {
 		return (
-			<div style={{position: "relative", width: this.props.size * 5}}>
+			<div style={{position: "relative"}}>
 				{this.renderBackFaces()}
 				{this.renderSelectedMood()}
 			</div>
@@ -28,38 +28,39 @@ export class Feedback extends React.Component<Props, State> {
 		let faces = [];
 		for (let i = 0; i < 5; i++) {
 			faces.push((
-				<Face
-					mood={-1 + 0.5 * i}
-					key={-1 + 0.5 * i}
-					neutralColor={grey}
-					negativeColor={grey}
-					positiveColor={grey}
-					size={this.props.size}
-					onClick={this.updateMood}
-				/>
+				<div style={{display: "inline-block"}}>
+					<Face
+						mood={-1 + 0.5 * i}
+						key={-1 + 0.5 * i}
+						neutralColor={grey}
+						negativeColor={grey}
+						positiveColor={grey}
+						size={this.props.size}
+						onClick={this.updateMood}
+					/>
+				</div>
 			));
 		}
-		return (
-			<div style={{position: "absolute"}}>
-				{faces}
-			</div>
-		);
+		return faces;
 	}
 
 	private updateMood = (mood: number) => {
 		this.setState({mood});
-		if(this.props.onChange) this.props.onChange(mood);
+		if (this.props.onChange) this.props.onChange(mood);
 	};
 
 	private renderSelectedMood = () => {
 		if (this.state.mood === null)return null;
 		const position = (1 + this.state.mood) * 2;
+		let face = (
+			<Face
+				mood={this.state.mood}
+				size={this.props.size}
+			/>
+		);
 		return (
-			<div style={{position: "absolute", left: this.props.size * position}}>
-				<Face
-					mood={this.state.mood}
-					size={this.props.size}
-				/>
+			<div style={{position: "absolute", left: this.props.size * position, display: "inline-block"}}>
+				{face}
 			</div>
 		);
 	}
