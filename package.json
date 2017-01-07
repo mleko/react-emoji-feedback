@@ -1,12 +1,18 @@
 {
   "name": "react-emoji-feedback",
-  "description": "Simple emoji based feedback component",
-  "keywords": ["react", "emoji", "feedback", "opinion", "typescript"],
+  "description": "Emoji based feedback component",
+  "keywords": ["emoji", "feedback", "opinion", "typescript", "react", "component"],
+  "author": "Daniel Król",
   "version": "0.1.0",
-  "scripts": {
-    "start": "webpack-dev-server"
-  },
   "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "prepublish": "webpack --config webpack.dist.js"
+  },
+  "files": [
+    "index.js"
+  ],
   "devDependencies": {
     "@types/es6-shim": "^0.31.32",
     "@types/react": "^0.14.29",
@@ -21,5 +27,12 @@
     "typescript": "^2.0.0",
     "webpack": "^1.12.12",
     "webpack-dev-server": "^1.10.1"
+  },
+  "peerDependencies": {
+    "react": "^15.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mleko/react-emoji-feedback.git"
   }
 }

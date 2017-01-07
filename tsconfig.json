@@ -12,7 +12,6 @@
     "suppressImplicitAnyIndexErrors": true
   },
   "files": [
-    "./index.tsx",
     "node_modules/@types/es6-shim/index.d.ts"
   ]
 }
