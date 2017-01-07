@@ -11,13 +11,9 @@
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true
     },
-    "filesGlob": [
-        "./**/*.ts",
-        "./**/*.tsx",
-        "!./node_modules/**/*"
-    ],
     "files": [
-        "./index.tsx"
+        "./index.tsx",
+        "node_modules/@types/es6-shim/index.d.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

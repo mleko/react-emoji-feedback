@@ -7,8 +7,10 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/es6-shim": "^0.31.32",
     "@types/react": "^0.14.29",
     "@types/react-dom": "^0.14.14",
+    "es6-shim": "^0.35.2",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "ts-loader": "^0.8.0",
