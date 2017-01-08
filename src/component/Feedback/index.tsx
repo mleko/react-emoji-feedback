@@ -28,10 +28,9 @@ export class Feedback extends React.Component<Props, State> {
 		let faces = [];
 		for (let i = 0; i < 5; i++) {
 			faces.push((
-				<div style={{display: "inline-block"}}>
+				<div style={{display: "inline-block"}} key={-1 + 0.5 * i}>
 					<Face
 						mood={-1 + 0.5 * i}
-						key={-1 + 0.5 * i}
 						neutralColor={grey}
 						negativeColor={grey}
 						positiveColor={grey}
