@@ -1,5 +1,7 @@
 import * as React from "react";
+
 import {Face} from "../Face";
+import {FeedbackFace} from "../FeedbackFace";
 
 export class Feedback extends React.Component<Props, State> {
 
@@ -18,7 +20,7 @@ export class Feedback extends React.Component<Props, State> {
 		return (
 			<div style={{position: "relative"}}>
 				{this.renderBackFaces()}
-				{this.renderSelectedMood()}
+				<FeedbackFace size={this.props.size} mood={this.state.mood}/>
 			</div>
 		);
 	}
@@ -30,6 +32,7 @@ export class Feedback extends React.Component<Props, State> {
 			faces.push((
 				<div style={{display: "inline-block"}} key={-1 + 0.5 * i}>
 					<Face
+						style={{display: "block"}}
 						mood={-1 + 0.5 * i}
 						neutralColor={grey}
 						negativeColor={grey}

@@ -18,7 +18,7 @@ export class Face extends React.Component<Props, void> {
 
 		const xPos = 18;
 
-		const style = {stroke: "black", strokeWidth: 5, fill: color};
+		const style = Object.assign({stroke: "black", strokeWidth: 5, fill: color}, this.props.style || {});
 
 		return (
 			<svg
@@ -52,6 +52,7 @@ interface Props {
 	neutralColor?: string;
 	negativeColor?: string;
 	mod?: number;
+	style?: {[id: string]: string};
 
 	onClick?: (mood: number) => void;
 }
