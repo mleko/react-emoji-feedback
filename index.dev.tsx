@@ -1,6 +1,7 @@
+import "es6-shim";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import {Feedback} from "./src/component/Feedback";
+import {Feedback} from ".";
 
 // Render a simple React component into the body.
 let element = document.createElement("div");

@@ -3,7 +3,7 @@ import {animate} from "react-easing";
 
 import {Face} from "../Face";
 
-@animate({duration: 700})
+@animate({duration: 700, easing: "ease-in-out"})
 export class FeedbackFace extends React.Component<Props, void> {
 	public render(): JSX.Element {
 		if (this.props.mood === null)return null;
