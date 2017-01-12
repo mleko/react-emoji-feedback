@@ -1,7 +1,6 @@
 import * as React from "react";
 import {animate} from "react-easing";
-
-import {Face} from "../Face";
+import {MoodColoredFace} from "../MoodColoredFace/index";
 
 @animate({duration: 700, easing: "ease-in-out"})
 export class FeedbackFace extends React.Component<Props, void> {
@@ -9,7 +8,7 @@ export class FeedbackFace extends React.Component<Props, void> {
 		if (this.props.mood === null)return null;
 		const position = (1 + this.props.mood) * 2;
 		let face = (
-			<Face
+			<MoodColoredFace
 				mood={this.props.mood}
 				size={this.props.size}
 			/>

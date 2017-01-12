@@ -34,9 +34,7 @@ export class Feedback extends React.Component<Props, State> {
 					<Face
 						style={{display: "block"}}
 						mood={-1 + 0.5 * i}
-						neutralColor={grey}
-						negativeColor={grey}
-						positiveColor={grey}
+						color={grey}
 						size={this.props.size}
 						onClick={this.updateMood}
 					/>
@@ -50,22 +48,6 @@ export class Feedback extends React.Component<Props, State> {
 		this.setState({mood});
 		if (this.props.onChange) this.props.onChange(mood);
 	};
-
-	private renderSelectedMood = () => {
-		if (this.state.mood === null)return null;
-		const position = (1 + this.state.mood) * 2;
-		let face = (
-			<Face
-				mood={this.state.mood}
-				size={this.props.size}
-			/>
-		);
-		return (
-			<div style={{position: "absolute", left: this.props.size * position, display: "inline-block"}}>
-				{face}
-			</div>
-		);
-	}
 }
 
 interface Props {

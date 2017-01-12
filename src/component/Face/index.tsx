@@ -1,20 +1,15 @@
 import * as React from "react";
-import {mixHex} from "../../functions/colorFunctions";
 
 export class Face extends React.Component<Props, void> {
 	public render(): JSX.Element {
 		const size = this.props.size || 100;
 		const mood = this.props.mood || 0;
-		const negativeColor = this.props.negativeColor || "#FF2222";
-		const neutralColor = this.props.neutralColor || "#FFFF22";
-		const positiveColor = this.props.positiveColor || "#22FF22";
+		let color = this.props.color;
 		const moodModifier = mood * (this.props.mod || 10);
 
 		const smileBase = 25;
 		let smileSide = smileBase - moodModifier * 0.5 - 5;
 		let smileCenter = smileBase + moodModifier * 1.5 - 5;
-
-		let color = mixHex(neutralColor, mood > 0 ? positiveColor : negativeColor, Math.abs(mood));
 
 		const xPos = 18;
 
@@ -48,9 +43,7 @@ export class Face extends React.Component<Props, void> {
 interface Props {
 	size?: number;
 	mood?: number;
-	positiveColor?: string;
-	neutralColor?: string;
-	negativeColor?: string;
+	color: string;
 	mod?: number;
 	style?: {[id: string]: string};
 
